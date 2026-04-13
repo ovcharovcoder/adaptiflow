@@ -127,3 +127,12 @@ If you enjoy Serene Focus, consider buying me a coffee:
 Released under the [MIT License](https://raw.githubusercontent.com/ovcharovcoder/adaptiflow/main/LICENSE)
 
 Built with calm precision and futuristic soul. ✨
+
+---
+
+# Install dependencies
+npm install
+# After installation, run compilation
+npm run compile
+# Then package
+npm run package
