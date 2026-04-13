@@ -1,0 +1,143 @@
+{
+  "name": "adaptiflow",
+  "displayName": "AdaptiFlow - Smart Responsive Assistant",
+  "description": "Automatic CSS/SCSS responsiveness in one second",
+  "version": "1.0.0",
+  "publisher": "ovcharovcoder",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ovcharovcoder/adaptiflow.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "responsive",
+    "adaptive",
+    "css",
+    "scss",
+    "clamp",
+    "media-queries",
+    "flexbox",
+    "grid"
+  ],
+  "icon": "icon.png",
+  "activationEvents": [
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:html"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "adaptiflow.autoAdapt",
+        "title": "AdaptiFlow: Auto-Adapt",
+        "category": "AdaptiFlow"
+      },
+      {
+        "command": "adaptiflow.clampify",
+        "title": "AdaptiFlow: Clampify",
+        "category": "AdaptiFlow"
+      },
+      {
+        "command": "adaptiflow.fixFlexGrid",
+        "title": "AdaptiFlow: Fix Flex/Grid",
+        "category": "AdaptiFlow"
+      },
+      {
+        "command": "adaptiflow.generateMedia",
+        "title": "AdaptiFlow: Generate Media Query",
+        "category": "AdaptiFlow"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "adaptiflow.autoAdapt",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a"
+      },
+      {
+        "command": "adaptiflow.clampify",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c"
+      },
+      {
+        "command": "adaptiflow.fixFlexGrid",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f"
+      },
+      {
+        "command": "adaptiflow.generateMedia",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m"
+      }
+    ],
+    "configuration": {
+      "title": "AdaptiFlow",
+      "properties": {
+        "adaptiflow.mobileBreakpoint": {
+          "type": "number",
+          "default": 768,
+          "description": "Mobile breakpoint (px)"
+        },
+        "adaptiflow.tabletBreakpoint": {
+          "type": "number",
+          "default": 1024,
+          "description": "Tablet breakpoint (px)"
+        },
+        "adaptiflow.desktopBreakpoint": {
+          "type": "number",
+          "default": 1200,
+          "description": "Desktop breakpoint (px)"
+        },
+        "adaptiflow.useClamp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use clamp() instead of media queries"
+        },
+        "adaptiflow.autoFixOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically fix when saving"
+        },
+        "adaptiflow.clampMinRatio": {
+          "type": "number",
+          "default": 0.5,
+          "minimum": 0.3,
+          "maximum": 0.9,
+          "description": "Minimum font size relative to desktop (0.3-0.9)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package --allow-missing-repository",
+    "install": "code --install-extension adaptiflow-1.0.0.vsix",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "dependencies": {
+    "postcss": "^8.4.32",
+    "postcss-scss": "^4.0.9",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
