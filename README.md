@@ -130,9 +130,9 @@ Built with calm precision and futuristic soul. ✨
 
 ---
 
-# Install dependencies
+#### Install dependencies
 npm install
-# After installation, run compilation
+#### After installation, run compilation
 npm run compile
-# Then package
+#### Then package
 npm run package
