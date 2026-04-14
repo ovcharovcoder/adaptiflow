@@ -5,10 +5,11 @@
 ## Features
 
 - **Auto-Adapt:** One click — and your CSS becomes fully responsive. Analyzes the entire file and fixes all problems automatically.
-- **Clampify:** Converts fixed values to smooth `clamp()` for fluid typography and spacing.
+- **Clampify:** Converts fixed values to smooth `clamp()` with `calc()` for fluid typography and spacing.
 - **Fix Flex/Grid:** Adds `flex-wrap: wrap` to flex containers and converts fixed grid columns to `repeat(auto-fit, minmax(...))`.
 - **Generate Media Queries:** Creates media queries for any breakpoints (mobile, tablet, desktop, wide).
-- **20+ Fixes:** Images, video, iframes, buttons, forms, tables, cards, sidebars, navigation, and more.
+- **Responsive Gap:** Automatically converts fixed `gap` values to `clamp()` for adaptive spacing.
+- **25+ Fixes:** Images, video, iframes, buttons, forms, tables, cards, sidebars, navigation, gap, and more.
 - **Lightning Fast:** All adaptivity takes less than a second.
 - **SCSS Support:** Fully works with SCSS syntax.
 - **Safe:** Only adds necessary properties, never deletes your original code. `Ctrl+Z` works.
@@ -25,7 +26,7 @@
 ### Quick start
 
 1. Go to the .css file with your styles
-2. Launch AdaptiFlow: press Ctrl+Shift+A (or Cmd+Shift+A on Mac).
+2. Launch AdaptiFlow: press `Ctrl+Shift+A` (or `Cmd+Shift+A` on Mac).
 3. You will see the changes in the css file.
 
 ## Example: Clampify in action
@@ -44,7 +45,7 @@ After:
 ```bash
 css
 .title {
-    font-size: clamp(16px, 2.00vw, 32px);
+     font-size: clamp(16px, calc(8px + 2vw), 32px);
 }
 ```
 
@@ -85,6 +86,8 @@ AdaptiFlow recognizes and optimizes these class names automatically:
 | **TYPOGRAPHY**            |
 | `h1, h2, h3`              | Headings              | `font-size: clamp()`                                   |
 | `img, video, iframe`      | Media                 | `max-width: 100%; height: auto`                        |
+| **SPACING**               |
+| `gap`                     | Grid/Flex spacing     | `gap: clamp(min, 3vw, max)`                            |
 | **HELPERS**               |
 | `.hide-on-mobile`         | Hidden on mobile      | `display: none` on screens < 768px                     |
 | `.show-on-mobile`         | Visible on mobile     | `display: block` on screens < 768px                    |
@@ -125,8 +128,6 @@ If you enjoy Serene Focus, consider buying me a coffee:
 ## License
 
 Released under the [MIT License](https://raw.githubusercontent.com/ovcharovcoder/adaptiflow/main/LICENSE)
-
-Built with calm precision and futuristic soul. ✨
 
 ---
 
