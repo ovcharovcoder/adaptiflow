@@ -80,6 +80,3 @@ All notable changes to the AdaptiFlow VS Code extension will be documented in th
 - Custom breakpoints per project
 - Live preview panel with device emulation
 
----
-
-**Built with calm precision and futuristic soul. Press `Ctrl+Shift+A` and watch the magic happen! ✨**
